@@ -21,84 +21,85 @@
 
         .container {
             max-width: 400px;
-            padding: 40px 20px;
+            padding: 40px 24px;
         }
 
-        .logo {
+        .logo-main {
             font-size: 32px;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             color: #FFFFFF;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .icon {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             background-color: #8B1A2F1A;
-            border-radius: 50%;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 32px;
+            border: 1px solid #8B1A2F33;
         }
 
         .icon svg {
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             fill: #8B1A2F;
         }
 
         h1 {
             font-size: 24px;
             margin-bottom: 16px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            font-weight: 800;
         }
 
         p {
             color: #CCCCCC;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
+            font-weight: 300;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: 700;
+            padding: 18px;
+            border-radius: 14px;
+            font-weight: 800;
             text-decoration: none;
-            margin-bottom: 12px;
-            transition: transform 0.2s;
+            margin-bottom: 16px;
+            transition: all 0.2s;
             box-sizing: border-box;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
 
         .btn:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
 
         .btn-primary {
             background-color: #8B1A2F;
             color: #FFFFFF;
-        }
-
-        .btn-secondary {
-            background-color: #1A1A1A;
-            color: #FFFFFF;
-            border: 1px solid #333333;
+            box-shadow: 0 8px 24px rgba(139, 26, 47, 0.2);
         }
 
         .footer {
-            margin-top: 40px;
-            font-size: 12px;
-            color: #666666;
+            margin-top: 60px;
+            font-size: 11px;
+            color: #444444;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">HEAVY DUTY</div>
+        <div class="logo-main">HEAVY DUTY</div>
 
         <div class="icon">
             <svg viewBox="0 0 24 24">
@@ -107,39 +108,19 @@
         </div>
 
         <h1>SHARED TEMPLATE</h1>
-        <p>A user has shared a training protocol or nutritional template with you. To view and save this content, you need to open it inside the Heavy Duty app.</p>
+        <p>A training protocol or nutritional template has been shared with you. To view and save this content, open it in the Heavy Duty app.</p>
 
         <a href="javascript:void(0)" onclick="openApp()" class="btn btn-primary">OPEN IN APP</a>
-        <a href="https://heavydutyapp.org" class="btn btn-secondary">DOWNLOAD APP</a>
 
         <div class="footer">
-            heavydutyapp.org
+            HEAVYDUTYAPP.ORG
         </div>
     </div>
 
     <script>
         function openApp() {
-            // Get current URL to pass to the app
-            const currentUrl = window.location.href;
-
-            // Attempt to open the app via custom scheme or universal link
-            // This script helps if the browser doesn't automatically trigger the deep link
-            window.location.href = currentUrl;
-
-            // Optional: Redirect to store after a delay if app didn't open
-            /*
-            setTimeout(function() {
-                window.location.href = "https://heavydutyapp.org";
-            }, 2500);
-            */
-        }
-
-        // Auto-attempt opening if it's a share link
-        window.onload = function() {
-            if (window.location.pathname.includes('/share/')) {
-                // Browsers usually handle this automatically via AASA/AssetLinks
-                // but we can add logic here if needed.
-            }
+            // Re-trigger the deep link
+            window.location.href = window.location.href;
         }
     </script>
 </body>
