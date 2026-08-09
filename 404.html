@@ -10,7 +10,8 @@
             padding: 0;
             background-color: #0D0D0D;
             color: #FFFFFF;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+            font-weight: 400;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -25,18 +26,17 @@
         }
 
         .logo-main {
-            font-size: 32px;
-            font-weight: 900;
+            font-size: 36px;
             letter-spacing: 6px;
             color: #FFFFFF;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
 
         .icon {
             width: 72px;
             height: 72px;
             background-color: #8B1A2F1A;
-            border-radius: 20px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -51,32 +51,31 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 16px;
-            letter-spacing: 0.5px;
-            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         p {
             color: #CCCCCC;
             font-size: 15px;
-            line-height: 1.6;
+            line-height: 1.4;
             margin-bottom: 48px;
-            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
         .btn {
             display: block;
             width: 100%;
             padding: 18px;
-            border-radius: 14px;
-            font-weight: 800;
+            border-radius: 4px;
             text-decoration: none;
             margin-bottom: 16px;
             transition: all 0.2s;
             box-sizing: border-box;
-            letter-spacing: 1px;
-            font-size: 14px;
+            letter-spacing: 2px;
+            font-size: 16px;
+            text-transform: uppercase;
         }
 
         .btn:active {
@@ -91,7 +90,7 @@
 
         .footer {
             margin-top: 60px;
-            font-size: 11px;
+            font-size: 12px;
             color: #444444;
             letter-spacing: 2px;
         }
@@ -108,7 +107,7 @@
         </div>
 
         <h1>SHARED TEMPLATE</h1>
-        <p>A training protocol or nutritional template has been shared with you. To view and save this content, open it in the Heavy Duty app.</p>
+        <p>A TRAINING PROTOCOL OR NUTRITIONAL TEMPLATE HAS BEEN SHARED WITH YOU. TO VIEW AND SAVE THIS CONTENT, OPEN IT IN THE HEAVY DUTY APP.</p>
 
         <a href="javascript:void(0)" onclick="openApp()" class="btn btn-primary">OPEN IN APP</a>
 
@@ -119,7 +118,6 @@
 
     <script>
         function openApp() {
-            // Re-trigger the deep link
             window.location.href = window.location.href;
         }
     </script>
