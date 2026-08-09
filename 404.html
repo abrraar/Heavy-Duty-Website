@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavy Duty | Shared Content</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0D0D0D;
+            color: #FFFFFF;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            background-color: #8B1A2F1A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+        }
+
+        .icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #8B1A2F;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #CCCCCC;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: transform 0.2s;
+            box-sizing: border-box;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: #8B1A2F;
+            color: #FFFFFF;
+        }
+
+        .btn-secondary {
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+            border: 1px solid #333333;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">HEAVY DUTY</div>
+
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 13H5v-2h14v2zM12 5L5 12l7 7 1.41-1.41L8.83 13H19v-2H8.83l4.58-4.59L12 5z"/>
+            </svg>
+        </div>
+
+        <h1>SHARED TEMPLATE</h1>
+        <p>A user has shared a training protocol or nutritional template with you. To view and save this content, you need to open it inside the Heavy Duty app.</p>
+
+        <a href="javascript:void(0)" onclick="openApp()" class="btn btn-primary">OPEN IN APP</a>
+        <a href="https://heavydutyapp.org" class="btn btn-secondary">DOWNLOAD APP</a>
+
+        <div class="footer">
+            heavydutyapp.org
+        </div>
+    </div>
+
+    <script>
+        function openApp() {
+            // Get current URL to pass to the app
+            const currentUrl = window.location.href;
+
+            // Attempt to open the app via custom scheme or universal link
+            // This script helps if the browser doesn't automatically trigger the deep link
+            window.location.href = currentUrl;
+
+            // Optional: Redirect to store after a delay if app didn't open
+            /*
+            setTimeout(function() {
+                window.location.href = "https://heavydutyapp.org";
+            }, 2500);
+            */
+        }
+
+        // Auto-attempt opening if it's a share link
+        window.onload = function() {
+            if (window.location.pathname.includes('/share/')) {
+                // Browsers usually handle this automatically via AASA/AssetLinks
+                // but we can add logic here if needed.
+            }
+        }
+    </script>
+</body>
+</html>
