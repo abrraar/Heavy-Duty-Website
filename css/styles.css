@@ -127,6 +127,30 @@ section {
     margin: 0 auto;
 }
 
+.ideology-section {
+    max-width: none;
+    background-image: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.85)), url('../assets/img/mike and ray mentzer.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ideology-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ideology-section .quote {
+    font-size: 24px;
+    color: var(--text-primary);
+    font-style: italic;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
 .section-title {
     text-align: center;
     font-size: 52px; /* Increased from 48px */
