@@ -91,7 +91,7 @@ nav {
     padding: 0 24px;
     background-image: linear-gradient(rgba(13, 13, 13, 0.7), rgba(13, 13, 13, 0.7)), url('../assets/img/mike double biceps.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: top center; /* Prevents cropping the head/faces */
 }
 
 .hero h1 {
