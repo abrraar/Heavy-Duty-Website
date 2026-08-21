@@ -138,6 +138,7 @@ section {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 200px 5%; /* Increased padding to show more of the image height */
 }
 
 .ideology-section .container {
@@ -205,7 +206,7 @@ section {
 
 /* Content Pages Styling */
 .page-header {
-    padding: 150px 5% 50px;
+    padding: 250px 5% 150px; /* Significantly increased to show much more of the background image */
     text-align: center;
 }
 
