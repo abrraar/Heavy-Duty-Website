@@ -130,10 +130,8 @@ section {
 .ideology-section {
     max-width: none;
     background-image: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.85)), url('../assets/img/mike and ray mentzer.jpeg');
-    background-size: 100% auto; /* Forces the whole width to show */
-    background-position: top center; /* Ensures the top isn't cropped */
-    background-repeat: no-repeat;
-    background-color: #0D0D0D; /* Fills any gap if the image isn't tall enough */
+    background-size: cover; /* Equivalent to BoxFit.cover */
+    background-position: top center; /* Prioritizes the faces and top area */
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
