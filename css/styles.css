@@ -1,5 +1,5 @@
 /* web/css/styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200;400;700&display=swap');
 
 :root {
     --bg-color: #0D0D0D;
@@ -9,8 +9,9 @@
     --text-primary: #FFFFFF;
     --text-secondary: #CCCCCC;
     --text-muted: #444444;
-    --font-heading: 'Anton', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-heading: 'Anton', sans-serif;
+    --font-subheading: 'Oswald', sans-serif;
+    --font-body: 'Oswald', sans-serif;
 }
 
 * {
@@ -23,13 +24,19 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-body);
-    font-weight: 400;
+    font-weight: 200; /* Extra Light for body text to contrast Anton */
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-h1, h2, h3, .nav-logo, .nav-links a, .btn {
+h1, .nav-logo, .btn {
     font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+h2, h3, .nav-links a {
+    font-family: var(--font-subheading);
+    font-weight: 700;
     text-transform: uppercase;
 }
 
