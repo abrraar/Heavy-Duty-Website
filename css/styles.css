@@ -319,7 +319,14 @@ footer {
 
 @media (max-width: 768px) {
     .hero h1 { font-size: 48px; letter-spacing: 6px; }
-    .nav-links { display: none; }
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
     .contact-form { padding: 30px 20px; }
     .section-title { font-size: 32px; letter-spacing: 4px; }
 }
