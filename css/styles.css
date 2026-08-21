@@ -21,6 +21,7 @@
 body {
     margin: 0;
     padding: 0;
+    padding-top: 60px; /* Space for fixed navbar on mobile */
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-body);
@@ -32,6 +33,7 @@ body {
 
 @media (min-width: 768px) {
     body {
+        padding-top: 80px; /* Space for fixed navbar on desktop */
         font-size: 18px;
         line-height: 1.7;
     }
