@@ -25,8 +25,15 @@
             font-size: 48px;
             letter-spacing: 4px;
             color: #FFFFFF;
-            margin-bottom: 40px;
             text-transform: uppercase;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 40px;
+            transition: opacity 0.2s;
+        }
+
+        .logo-main:hover {
+            opacity: 0.8;
         }
 
         .icon {
@@ -85,6 +92,16 @@
             box-shadow: 0 8px 24px rgba(139, 26, 47, 0.2);
         }
 
+        .btn-secondary {
+            background-color: transparent;
+            color: #8B1A2F;
+            border: 1px solid #8B1A2F;
+        }
+
+        .btn-secondary:hover {
+            background-color: #8B1A2F1A;
+        }
+
         .footer-text {
             margin-top: 60px;
             font-size: 12px;
@@ -95,7 +112,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-main">HEAVY DUTY APP</div>
+        <a href="index.html" class="logo-main">HEAVY DUTY APP</a>
 
         <div class="icon">
             <svg viewBox="0 0 24 24">
@@ -107,6 +124,7 @@
         <p>A training protocol or nutritional template has been shared with you. To view and save this content, open it in the Heavy Duty app.</p>
 
         <a href="javascript:void(0)" onclick="openApp()" class="btn btn-primary">OPEN IN APP</a>
+        <a href="index.html" class="btn btn-secondary">DOWNLOAD THE APP</a>
 
         <div class="footer-text">
             HEAVYDUTYAPP.ORG
