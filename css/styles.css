@@ -90,8 +90,10 @@ nav {
     text-align: center;
     padding: 0 24px;
     background-image: linear-gradient(rgba(13, 13, 13, 0.7), rgba(13, 13, 13, 0.7)), url('../assets/img/mike double biceps.jpeg');
-    background-size: cover;
-    background-position: top center; /* Prevents cropping the head/faces */
+    background-size: 100% auto; /* Fits by screen width exactly */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #0D0D0D;
 }
 
 .hero h1 {
@@ -133,8 +135,10 @@ section {
 .ideology-section {
     max-width: none;
     background-image: linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.85)), url('../assets/img/mike and ray mentzer.jpeg');
-    background-size: cover; /* Equivalent to BoxFit.cover */
-    background-position: top center; /* Prioritizes the faces and top area */
+    background-size: 100% auto; /* Fits by width */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #0D0D0D;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -206,8 +210,10 @@ section {
 
 /* Content Pages Styling */
 .page-header {
-    padding: 250px 5% 150px; /* Significantly increased to show much more of the background image */
+    padding: 250px 5% 150px;
     text-align: center;
+    background-size: cover;
+    background-position: top center; /* Focused on the top for all headers */
 }
 
 .page-content {
@@ -220,6 +226,63 @@ section {
     color: var(--accent-color);
     margin-top: 40px;
     letter-spacing: 1px;
+}
+
+/* Store Buttons */
+.store-buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-store {
+    background-color: #1A1A1A;
+    border: 1px solid #333333;
+    color: var(--accent-color);
+    cursor: default;
+    display: flex;
+    align-items: center;
+    padding: 12px 28px;
+    border-radius: 12px;
+    transition: background-color 0.3s, border-color 0.3s;
+    min-width: 200px;
+}
+
+.btn-store:hover {
+    background-color: #222222;
+    border-color: var(--accent-color);
+}
+
+.btn-store svg {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+}
+
+.btn-store-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.btn-store-subtitle {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: none;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.btn-store-title {
+    font-family: var(--font-heading); /* Anton */
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 2px;
+    line-height: 1.1;
+    color: var(--text-primary);
 }
 
 /* Buttons */
