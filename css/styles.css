@@ -24,8 +24,9 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-body);
-    font-weight: 400; /* Increased weight for much better readability */
-    line-height: 1.6;
+    font-weight: 400;
+    font-size: 18px; /* Increased from default 16px */
+    line-height: 1.7; /* Slightly more breathing room */
     overflow-x: hidden;
 }
 
@@ -116,7 +117,7 @@ nav {
 .hero p {
     max-width: 600px;
     color: var(--text-secondary);
-    font-size: 18px;
+    font-size: 20px; /* Increased from 18px */
 }
 
 /* Sections */
@@ -128,7 +129,7 @@ section {
 
 .section-title {
     text-align: center;
-    font-size: 48px;
+    font-size: 52px; /* Increased from 48px */
     letter-spacing: 6px;
     margin-bottom: 60px;
     color: var(--text-primary);
