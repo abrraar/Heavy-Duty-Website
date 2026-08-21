@@ -24,7 +24,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-body);
-    font-weight: 200; /* Extra Light for body text to contrast Anton */
+    font-weight: 400; /* Increased weight for much better readability */
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -99,6 +99,8 @@ nav {
 
 .hero .sub-logo {
     color: var(--accent-color);
+    font-family: var(--font-subheading); /* Using Oswald */
+    font-weight: 700; /* Bold for elite emphasis */
     font-size: 18px;
     letter-spacing: 5px;
     margin-top: 15px;
