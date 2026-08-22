@@ -54,62 +54,24 @@
         <p style="margin-top: 40px; color: #444444; font-size: 14px; text-align: center;">We aim to respond to all inquiries within 48 hours.</p>
     </main>
 
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     <script>
-        const form = document.getElementById("contact-form");
-        const successMsg = document.querySelector("[data-fs-success]");
-        const errorMsg = document.querySelector("[data-fs-error]");
-        const submitBtn = document.querySelector("[data-fs-submit-btn]");
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
 
-        form.addEventListener("submit", async function(event) {
-            event.preventDefault();
+        formspree('initForm', {
+            formElement: '#contact-form',
+            formId: 'meajaqgr',
+            onSuccess: function() {
+                const form = document.getElementById("contact-form");
+                const successMsg = document.querySelector("[data-fs-success]");
+                const errorMsg = document.querySelector("[data-fs-error]");
+                const submitBtn = document.querySelector("[data-fs-submit-btn]");
 
-            // UI State: Loading
-            submitBtn.disabled = true;
-            submitBtn.innerText = "SENDING...";
-            successMsg.style.display = "none";
-            errorMsg.style.display = "none";
-
-            const data = new FormData(event.target);
-            const value = Object.fromEntries(data.entries()); // Convert to JSON object
-
-            try {
-                const response = await fetch(event.target.action, {
-                    method: form.method,
-                    body: JSON.stringify(value),
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    // UI State: Success
-                    successMsg.style.display = "block";
-                    form.reset();
-                    submitBtn.innerText = "MESSAGE SENT";
-                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    // UI State: Server Error
-                    const errorData = await response.json();
-                    let errorMessage = "AN ERROR OCCURRED. ";
-
-                    if (errorData.errors) {
-                        errorMessage += errorData.errors.map(err => err.message.toUpperCase()).join(", ");
-                    } else if (errorData.error) {
-                        errorMessage += errorData.error.toUpperCase();
-                    }
-
-                    errorMsg.innerText = errorMessage;
-                    errorMsg.style.display = "block";
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = "SEND MESSAGE";
-                }
-            } catch (error) {
-                // UI State: Network Error
-                console.error("Network Error:", error);
-                errorMsg.style.display = "block";
-                submitBtn.disabled = false;
-                submitBtn.innerText = "SEND MESSAGE";
+                successMsg.style.display = "block";
+                errorMsg.style.display = "none";
+                form.reset();
+                submitBtn.innerText = "MESSAGE SENT";
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         });
     </script>
