@@ -16,18 +16,19 @@
         </div>
     </nav>
 
-    <header class="page-header" style="background-image: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)), url('assets/img/mike contact now.jpeg'); background-size: cover; background-position: top center;">
-        <h1 class="section-title">CONTACT <span>US</span></h1>
-        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6;">Welcome to the Heavy Duty App support portal. Whether you have technical inquiries or feedback on your training progression, our team is ready to assist you.</p>
+    <header class="page-header bg-contact">
+        <div>
+            <h1 class="section-title">CONTACT <span>US</span></h1>
+            <p class="max-w-600">Welcome to the Heavy Duty App support portal. Whether you have technical inquiries or feedback on your training progression, our team is ready to assist you.</p>
+        </div>
     </header>
 
     <main class="page-content">
         <div class="contact-container">
-            <!-- Formspree Success/Error Messages -->
-            <div data-fs-success style="display: none; background: rgba(0, 255, 0, 0.1); border: 1px solid #00FF00; color: #00FF00; padding: 20px; border-radius: 4px; text-align: center; margin-bottom: 20px; font-family: var(--font-subheading); font-weight: 700; letter-spacing: 1px;">
+            <div data-fs-success class="fs-success">
                 MESSAGE SENT SUCCESSFULLY. WE WILL CONTACT YOU SOON.
             </div>
-            <div data-fs-error style="display: none; background: rgba(255, 0, 0, 0.1); border: 1px solid var(--accent-color); color: var(--accent-color); padding: 20px; border-radius: 4px; text-align: center; margin-bottom: 20px; font-family: var(--font-subheading); font-weight: 700; letter-spacing: 1px;">
+            <div data-fs-error class="fs-error">
                 AN ERROR OCCURRED. PLEASE TRY AGAIN.
             </div>
 
@@ -35,23 +36,22 @@
                 <div class="form-group">
                     <label for="name">YOUR FULL NAME</label>
                     <input type="text" name="name" id="name" required placeholder="Enter your name" data-fs-field>
-                    <span data-fs-error="name" style="color: var(--accent-color); font-size: 12px; display: block; margin-top: 5px;"></span>
+                    <span data-fs-error="name" class="fs-field-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="email">YOUR EMAIL ADDRESS</label>
                     <input type="email" name="email" id="email" required placeholder="name@example.com" data-fs-field>
-                    <span data-fs-error="email" style="color: var(--accent-color); font-size: 12px; display: block; margin-top: 5px;"></span>
+                    <span data-fs-error="email" class="fs-field-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="message">YOUR MESSAGE</label>
                     <textarea name="message" id="message" required placeholder="How can we help you reach maximum adaptation?" data-fs-field></textarea>
-                    <span data-fs-error="message" style="color: var(--accent-color); font-size: 12px; display: block; margin-top: 5px;"></span>
+                    <span data-fs-error="message" class="fs-field-error"></span>
                 </div>
                 <button type="submit" class="btn btn-submit" data-fs-submit-btn>SEND MESSAGE</button>
             </form>
+            <p class="mt-40 text-muted-small text-center">We aim to respond to all inquiries within 48 hours.</p>
         </div>
-
-        <p style="margin-top: 40px; color: #444444; font-size: 14px; text-align: center;">We aim to respond to all inquiries within 48 hours.</p>
     </main>
 
     <script src="https://unpkg.com/@formspree/ajax@1"></script>
@@ -79,8 +79,8 @@
     </script>
 
     <footer>
-        <div class="nav-logo">HEAVY DUTY APP</div>
-        <p style="color: #444444; margin-top: 10px; text-align: center;">&copy; 2026 HEAVYDUTYAPP.ORG</p>
+        <div class="footer-logo">HEAVY DUTY APP</div>
+        <p class="footer-copyright">&copy; 2026 HEAVYDUTYAPP.ORG</p>
         <div class="footer-links">
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
