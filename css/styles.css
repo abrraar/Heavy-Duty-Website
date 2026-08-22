@@ -171,7 +171,17 @@ nav {
 
 .hero h1 {
     font-size: clamp(36px, 8vw, 90px);
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+}
+
+.hero-subtitle {
+    font-family: var(--font-h2);
+    letter-spacing: 0.5em;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: var(--accent-red);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .hero p {
