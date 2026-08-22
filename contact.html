@@ -55,10 +55,55 @@
     </main>
 
     <script>
-      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-      formspree('initForm', { formElement: '#contact-form', formId: 'meajaqgr' });
+        const form = document.getElementById("contact-form");
+        const successMsg = document.querySelector("[data-fs-success]");
+        const errorMsg = document.querySelector("[data-fs-error]");
+        const submitBtn = document.querySelector("[data-fs-submit-btn]");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            // UI State: Loading
+            submitBtn.disabled = true;
+            submitBtn.innerText = "SENDING...";
+            successMsg.style.display = "none";
+            errorMsg.style.display = "none";
+
+            const data = new FormData(event.target);
+
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // UI State: Success
+                    successMsg.style.display = "block";
+                    form.reset();
+                    submitBtn.innerText = "MESSAGE SENT";
+                    // Scroll to top of form to see message
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    // UI State: Server Error
+                    const errorData = await response.json();
+                    console.error("Formspree Error:", errorData);
+                    errorMsg.style.display = "block";
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "SEND MESSAGE";
+                }
+            } catch (error) {
+                // UI State: Network Error
+                console.error("Network Error:", error);
+                errorMsg.style.display = "block";
+                submitBtn.disabled = false;
+                submitBtn.innerText = "SEND MESSAGE";
+            }
+        });
     </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
     <footer>
         <div class="nav-logo">HEAVY DUTY APP</div>
