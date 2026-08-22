@@ -54,25 +54,27 @@
         <p style="margin-top: 40px; color: #444444; font-size: 14px; text-align: center;">We aim to respond to all inquiries within 48 hours.</p>
     </main>
 
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script src="https://unpkg.com/@formspree/ajax@1"></script>
     <script>
-        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        document.addEventListener("DOMContentLoaded", function() {
+            window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
 
-        formspree('initForm', {
-            formElement: '#contact-form',
-            formId: 'meajaqgr',
-            onSuccess: function() {
-                const form = document.getElementById("contact-form");
-                const successMsg = document.querySelector("[data-fs-success]");
-                const errorMsg = document.querySelector("[data-fs-error]");
-                const submitBtn = document.querySelector("[data-fs-submit-btn]");
+            formspree('initForm', {
+                formElement: '#contact-form',
+                formId: 'meajaqgr',
+                onSuccess: function() {
+                    const form = document.getElementById("contact-form");
+                    const successMsg = document.querySelector("[data-fs-success]");
+                    const errorMsg = document.querySelector("[data-fs-error]");
+                    const submitBtn = document.querySelector("[data-fs-submit-btn]");
 
-                successMsg.style.display = "block";
-                errorMsg.style.display = "none";
-                form.reset();
-                submitBtn.innerText = "MESSAGE SENT";
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+                    successMsg.style.display = "block";
+                    errorMsg.style.display = "none";
+                    form.reset();
+                    submitBtn.innerText = "MESSAGE SENT";
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
         });
     </script>
 
