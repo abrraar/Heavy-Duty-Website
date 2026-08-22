@@ -123,14 +123,14 @@ nav {
     }
 }
 
-/* Hero Section - Centered Editorial */
+/* Hero Section - Elite Layout */
 .hero {
     position: relative;
     min-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center on mobile */
     text-align: center;
     overflow: hidden;
 }
@@ -166,7 +166,23 @@ nav {
     position: relative;
     z-index: 3;
     max-width: 1000px;
-    padding: 40px 24px;
+    padding: 80px 24px 40px;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        justify-content: flex-end; /* Push to right on desktop */
+        text-align: right;
+        padding-right: 8%;
+    }
+
+    .hero-content {
+        max-width: 750px;
+    }
+
+    .store-buttons {
+        justify-content: flex-end !important;
+    }
 }
 
 .hero h1 {
@@ -174,12 +190,23 @@ nav {
     margin-bottom: 12px;
 }
 
+.sub-logo {
+    font-family: var(--font-h2);
+    color: var(--accent-red);
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 .hero-subtitle {
     font-family: var(--font-h2);
     letter-spacing: 0.5em;
     margin-bottom: 40px;
     font-size: 14px;
-    color: var(--accent-red);
+    color: #fff;
     font-weight: 700;
     text-transform: uppercase;
 }
