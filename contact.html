@@ -70,12 +70,14 @@
             errorMsg.style.display = "none";
 
             const data = new FormData(event.target);
+            const value = Object.fromEntries(data.entries()); // Convert to JSON object
 
             try {
                 const response = await fetch(event.target.action, {
                     method: form.method,
-                    body: data,
+                    body: JSON.stringify(value),
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     }
                 });
