@@ -371,6 +371,12 @@ section {
     }
 }
 
+.ideology-section .container {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+}
+
 .ideology-section .quote {
     font-size: clamp(24px, 4vw, 36px);
     font-style: italic;
