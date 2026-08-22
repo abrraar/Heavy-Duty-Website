@@ -85,12 +85,19 @@
                     successMsg.style.display = "block";
                     form.reset();
                     submitBtn.innerText = "MESSAGE SENT";
-                    // Scroll to top of form to see message
                     successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
                     // UI State: Server Error
                     const errorData = await response.json();
-                    console.error("Formspree Error:", errorData);
+                    let errorMessage = "AN ERROR OCCURRED. ";
+
+                    if (errorData.errors) {
+                        errorMessage += errorData.errors.map(err => err.message.toUpperCase()).join(", ");
+                    } else if (errorData.error) {
+                        errorMessage += errorData.error.toUpperCase();
+                    }
+
+                    errorMsg.innerText = errorMessage;
                     errorMsg.style.display = "block";
                     submitBtn.disabled = false;
                     submitBtn.innerText = "SEND MESSAGE";
