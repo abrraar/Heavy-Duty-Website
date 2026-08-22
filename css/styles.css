@@ -634,11 +634,10 @@ footer {
 }
 
 /* Backgrounds */
-.bg-philosophy { background-image: url('../assets/img/mike and ray mentzer.jpeg'); }
-.bg-about { background-image: url('../assets/img/mike about .jpeg'); }
-.bg-contact { background-image: url('../assets/img/mike contact now.jpeg'); }
-.bg-privacy { background-image: url('../assets/img/mike and ray mentzer privacy.jpeg'); }
-.bg-terms { background-image: url('../assets/img/mike and ray mentzer terms.jpeg'); }
+.bg-about { background-image: url('../assets/img/desktop/mike about .jpeg'); }
+.bg-contact { background-image: url('../assets/img/desktop/mike contact now.jpeg'); }
+.bg-privacy { background-image: url('../assets/img/desktop/mike and ray mentzer privacy.jpeg'); }
+.bg-terms { background-image: url('../assets/img/desktop/mike and ray mentzer terms.jpeg'); }
 
 /* Utility */
 .mt-40 { margin-top: 40px; }
