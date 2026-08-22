@@ -3,7 +3,7 @@
    Redesigned 2026
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Syncopate:wght@700&family=Space+Grotesk:wght@600;700&family=Inter:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@700&family=Inter:wght@300;400;600&display=swap');
 
 :root {
     /* Color Palette */
@@ -16,8 +16,8 @@
     --text-muted: #666666;
 
     /* Typography */
-    --font-h1: 'Syncopate', sans-serif;
-    --font-h2: 'Space Grotesk', sans-serif;
+    --font-h1: 'Anton', sans-serif;
+    --font-h2: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
 
     /* Glassmorphism - KEPT EXACTLY AS IT WAS */
@@ -54,9 +54,9 @@ body {
 /* Typography Defaults */
 h1 {
     font-family: var(--font-h1);
-    font-weight: 700;
+    font-weight: 400; /* Anton only has one weight */
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 2px;
     line-height: 1.1;
 }
 
@@ -64,7 +64,7 @@ h2, h3 {
     font-family: var(--font-h2);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 1px;
 }
 
 p {
@@ -89,7 +89,7 @@ nav {
 }
 
 .nav-logo {
-    font-family: 'Anton', sans-serif; /* Fallback to Anton or keep brand logo font if specific */
+    font-family: var(--font-h1);
     font-size: 22px;
     text-decoration: none;
     color: var(--text-primary);
@@ -390,15 +390,15 @@ section {
 
 /* Page Header */
 .page-header {
-    min-height: 70vh;
+    height: 50vh; /* Reduced from 70vh for better desktop framing */
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
-    background-position: center;
+    background-position: center 20%; /* Adjusted to keep the subject in frame and prevent being pushed out */
     position: relative;
     text-align: center;
-    padding: 100px 5%;
+    padding: 0 5%;
 }
 
 .page-header::before {
