@@ -124,12 +124,19 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 100px 24px 60px;
-    background-image: linear-gradient(rgba(13, 13, 13, 0.7), rgba(13, 13, 13, 0.7)), url('../assets/img/mike double biceps.jpeg');
-    background-size: cover;
+    padding: 140px 24px 80px; /* Increased top padding to push text away from the top area */
+    background-image: linear-gradient(rgba(13, 13, 13, 0.4), rgba(13, 13, 13, 0.9)), url('../assets/img/mike double biceps.jpeg');
+    background-size: contain; /* SHOWS ENTIRE IMAGE WITHOUT CROPPING */
     background-position: top center;
     background-repeat: no-repeat;
-    background-color: #0D0D0D;
+    background-color: #000000;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        background-size: 100% auto; /* Fits by width on large screens */
+        padding-top: 180px;
+    }
 }
 
 .hero h1 {
@@ -367,16 +374,23 @@ section {
 }
 
 .btn-store {
-    background-color: #1A1A1A;
-    border: 1px solid #333333;
-    color: var(--accent-color);
+    background-color: #000000; /* Authentic black store button background */
+    border: 1px solid #444444;
+    color: var(--text-primary);
     cursor: default;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s, border-color 0.3s;
-    min-width: 180px;
+    padding: 10px 24px;
+    border-radius: 8px; /* Standard store button rounded corners */
+    transition: all 0.3s;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.btn-store:hover {
+    background-color: #111111;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 @media (min-width: 768px) {
